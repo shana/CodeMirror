@@ -1,0 +1,82 @@
+<!doctype html>
+
+<title>CodeMirror: Ink mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<link rel="stylesheet" href="ink.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../../addon/mode/simple.js"></script>
+<script src="ink.js"></script>
+<style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+
+<div id=nav>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Ink</a>
+  </ul>
+</div>
+
+<article>
+<h2>Ink mode</h2>
+<form><textarea id="code" name="code">LONDON, 1872
+  Residence of Monsieur Phileas Fogg.
+  -> london
+  
+  TODO: Add some more content
+
+  // comment
+
+  === london ===
+  Monsieur Phileas Fogg returned home early from the Reform Club, and in a new-fangled steam-carriage, besides!  
+  "Passepartout," said he. "We are going around the world!" &lt;># colour it blue
+  
+  + "Around the world[?], Monsieur?" # a tag
+      I was utterly astonished. 
+      -> astonished
+  + [Nod curtly.] -> nod
+  
+  
+/* longer comment
+*/
+
+  === astonished ===
+  &lt;>"You are in jest!" I told him in dignified affront. "You make mock of me, Monsieur."
+  "I am quite serious."
+  
+  + "But of course"
+      -> ending
+  
+    TODO: add more content here
+  
+  === nod ===
+  I nodded curtly, not believing a word of it.
+  -> ending
+  
+  
+  === ending
+  "We shall circumnavigate the globe within eighty days." He was quite calm as he proposed this wild scheme. "We leave for Paris on the 8:25. In an hour."
+  -> END
+</textarea></form>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        theme: "vscode-dark",
+        mode: "ink"
+      });
+    </script>
+
+    <p>Ink syntax highlighting for CodeMirror. Depends on
+    the <a href="../../demo/simplemode.html">simplemode</a> addon.</p>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-ink</code></p>
+  </article>
